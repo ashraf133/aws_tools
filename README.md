@@ -1,6 +1,37 @@
+Here is the updated `README.md` with a clear **Example Output** section right at the top. This gives users an immediate understanding of what the tool does.
+
+You can copy and paste the entire block below.
+
+-----
+
 # EC2 SSM Connect Script
 
 A zero-dependency\* Python script to list EC2 instances and connect to them via AWS Systems Manager (SSM) without SSH keys.
+
+## 📸 Example Output
+
+```text
+$ ./ssm
+Found 3 EC2 instance(s):
++-----+--------------+---------------------+---------------+----------+---------+-------------+
+|   # | Name         | Instance ID         | IP Address    | Type     | Status  | SSM Ready   |
++=====+==============+=====================+===============+==========+=========+=============+
+|   1 | api-prod-01  | i-0fab1234567890abc | 10.0.1.52     | m5.large | running | Yes         |
++-----+--------------+---------------------+---------------+----------+---------+-------------+
+|   2 | bastion-host | i-0123456789abcdef0 | 10.0.1.53     | t3.nano  | running | Yes         |
++-----+--------------+---------------------+---------------+----------+---------+-------------+
+|   3 | old-worker   | i-0987654321fedcba0 | 10.0.1.54     | t3.micro | stopped | No          |
++-----+--------------+---------------------+---------------+----------+---------+-------------+
+----------------------------------------------------------------------
+Enter the number (#) of the instance to connect to (1-3) or 'q' to quit: 1
+
+Attempting to start SSM session for: i-0fab1234567890abc...
+
+Starting session with SessionId: user-01a2b3c4d5e6f7g8h
+sh-4.2$
+```
+
+-----
 
 ## 📋 Prerequisites
 
